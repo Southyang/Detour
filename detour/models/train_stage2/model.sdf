@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="stage2_test">
+    <pose>0 0 0 0 0 0</pose>
+    <static>true</static>
+    <link name="body">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://stage2_test/media/stage2_test.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://stage2_test/media/scripts</uri>
+            <uri>model://stage2_test/media/Textures</uri>
+            <name>RepeatedGrass/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://stage2_test/media/stage2_test.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="gui" default="true"/>
+  <arg name="world_name" default="train_stage2"/>
+  <arg name="robot_num" default="6"/>
+  <arg name="stage_index" default="2"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find detour)/worlds/$(arg world_name).world"/>
+    <arg name="gui" value="$(arg gui)"/>
+  </include>
+
+  <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+    <arg name="robot_namespace" value="robot0"/>
+    <arg name="x" value="-12" />
+    <arg name="y" value="-12" />
+    <arg name="z" value="0.2" />
+    <arg name="board_color" value="Red" />
+  </include>
+
+  <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+    <arg name="robot_namespace" value="robot1"/>
+    <arg name="x" value="-12" />
+    <arg name="y" value="-8" />
+    <arg name="z" value="0.2" />
+    <arg name="board_color" value="Green" />
+  </include>
+
+  <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+    <arg name="robot_namespace" value="robot2"/>
+    <arg name="x" value="-12" />
+    <arg name="y" value="-4" />
+    <arg name="z" value="0.2" />
+    <arg name="board_color" value="Blue" />
+  </include>
+
+  <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+    <arg name="robot_namespace" value="robot3"/>
+    <arg name="x" value="-12" />
+    <arg name="y" value="4" />
+    <arg name="z" value="0.2" />
+    <arg name="board_color" value="Orange" />
+  </include>
+
+  <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+    <arg name="robot_namespace" value="robot4"/>
+    <arg name="x" value="-12" />
+    <arg name="y" value="8" />
+    <arg name="z" value="0.2" />
+    <arg name="board_color" value="Grey" />
+  </include>
+
+  <include file="$(find husky_gazebo)/launch/spawn_husky.launch">
+    <arg name="robot_namespace" value="robot5"/>
+    <arg name="x" value="-12" />
+    <arg name="y" value="12" />
+    <arg name="z" value="0.2" />
+    <arg name="board_color" value="Purple" />
+  </include>
+
+
+  <node pkg="detour" type="tf_transfer_world.py" name="tf_transfer_world">
+    <param name="robot_num" value="$(arg robot_num)"/>
+    <param name="stage_index" value="$(arg stage_index)"/>
+  </node>
+
+  <node pkg="detour" type="path_pub_node.py" name="path_pub_node">
+    <param name="robot_num" value="$(arg robot_num)"/>
+    <param name="max_poses" value="20"/>
+  </node>
+
+  <node pkg="detour" type="obstacle_pub_node.py" name="obstacle_pub_node">
+    <param name="stage_index" value="$(arg stage_index)"/>
+  </node>
+
+<!--   <include file="$(find astar)/launch/astar.launch"> -->
+<!--         <param name="num_robots" value="$(arg robot_num)"/> -->
+<!--   </include> -->
+  <node pkg="tf" type="static_transform_publisher" name="world_to_map_broadcaster" args="0 0 0 0 0 0 world map 100" />
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find detour)/rviz/config2.rviz "/>
+  <!-- <node pkg="rqt_publisher" type="rqt_publisher" name="rqt_publisher" /> -->
+  <!-- <node pkg="rqt_topic" type="rqt_topic" name="rqt_topic" /> -->
+
+</launch>
