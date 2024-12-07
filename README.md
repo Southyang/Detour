@@ -10,7 +10,7 @@ The multi-robot navigation system has increasingly shown superior performance an
 
 This repository contains code for Detour.
 
-## 2. A demo video for SHOTS
+## 2. A demo video for Detour
 
 This is a demo video of the real robot experiments for the paper titled "Detour: Decentralized Multi-Robot Off-Road Navigation via Terrain Diffusion and Curriculum Reinforcement Learning".
 [![Detour's Real Robot Experiments Video](https://res.cloudinary.com/marcomontalbano/image/upload/v1733574101/video_to_markdown/images/youtube--b_uZ-W4qzec-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=b_uZ-W4qzec&ab_channel=Southyang "Detour's Real Robot Experiments Video")
@@ -55,7 +55,7 @@ mpiexec -n 6 python train_stage1.py
 
 ## 5. Acknowledgement
 Code acknowledgements:
- - Detour/src/Husky modified from [Husky](https://github.com/husky/husky).
+ - Detour/src/Husky is modified from [Husky](https://github.com/husky/husky).
 
 
 
