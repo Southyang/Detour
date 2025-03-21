@@ -1,6 +1,6 @@
 # Detour: Decentralized Multi-Robot Off-Road Navigation via Terrain Diffusion and Curriculum Reinforcement Learning
 
-Haonan Yang, Bolei Chen, Jiaxu Kang, Ping Zhong, Yu Sheng
+Haonan Yang, Bolei Chen, Jiaxu Kang, Ping Zhong, Yu Sheng, Shengkang Yao, Rui Fan
 
 ## 1. Overview
 
@@ -13,7 +13,7 @@ This repository contains code for Detour.
 ## 2. A demo video for Detour
 
 This is a demo video of the real robot experiments for the paper titled "Detour: Decentralized Multi-Robot Off-Road Navigation via Terrain Diffusion and Curriculum Reinforcement Learning".
-[![Detour's Real Robot Experiments Video](https://res.cloudinary.com/marcomontalbano/image/upload/v1733575898/video_to_markdown/images/youtube--uQZHvykxhrQ-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=uQZHvykxhrQ&ab_channel=Southyang "Detour's Real Robot Experiments Video")
+[![Detour's Real Robot Experiments Video](https://res.cloudinary.com/marcomontalbano/image/upload/v1742532941/video_to_markdown/images/youtube--USxKR1gXmTQ-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/USxKR1gXmTQ "Detour's Real Robot Experiments Video")
 
 ## 3. Installation
 
